@@ -25,16 +25,18 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const code = '// Dart language\nconst message = "Hello World!";';
+    const code = '''
+// Dart language
+void main() {
+    const message = "Hello World!";
+    print(message);
+}
+''';
     const language = 'dart';
 
     final prism = Prism(
       style: PrismStyle(
-        root: const TextStyle(
-          color: Colors.black87,
-          fontSize: 22,
-          height: 1.3,
-        ),
+        root: const TextStyle(fontSize: 18),
       ),
     );
     final textSpan = prism.render(code, language);
@@ -43,7 +45,8 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('dart_prism example'),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(20),
         child: RichText(
           text: textSpan,
         ),
