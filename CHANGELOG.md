@@ -1,3 +1,7 @@
-## 0.0.1
+## 0.1.1
 
-* TODO: Describe initial release.
+- Improve `PrismStyle` and it's default text styles.
+
+## 0.1.0
+
+Initial version.
