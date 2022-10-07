@@ -1,6 +1,6 @@
 name: flutter_prism
 description: A syntax highlighting package for Flutter, based on dart_prism.
-version: 0.1.1
+version: 0.2.0-dev
 homepage: https://github.com/chenzhiguang/flutter_prism
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dart_prism: ^0.1.0
+  dart_prism: ^0.2.0
 
 dev_dependencies:
   flutter_test:
