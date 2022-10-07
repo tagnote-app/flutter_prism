@@ -10,15 +10,13 @@ class Prism {
 
   final PrismStyle _styles;
 
-  /// Renders [code] to a [TextSpan] with the grammar of the given [language].
-  TextSpan render(String code, String language) {
+  /// Renders [code] to a [TextSpan] list with the grammar of the given
+  /// [language].
+  List<TextSpan> render(String code, String language) {
     final prism = p.Prism();
 
-    return TextSpan(
-      style: _styles.get('root'),
-      children: _parseNodes(
-        prism.parse(code, language),
-      ),
+    return _parseNodes(
+      prism.parse(code, language),
     );
   }
 
