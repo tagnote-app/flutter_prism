@@ -1,4 +1,4 @@
-## 0.2.0-dev
+## 0.2.0
 
 - Update to `dart_prism` 0.2.0.
 - **Breaking change**: Remove `root` from `PrismStyle`.
