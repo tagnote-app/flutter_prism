@@ -3,7 +3,6 @@ import 'package:flutter/painting.dart';
 
 class PrismStyle extends p.PrismStyle<TextStyle> {
   PrismStyle({
-    TextStyle? root,
     TextStyle? token,
     TextStyle? atrule,
     TextStyle? attrName,
@@ -37,12 +36,6 @@ class PrismStyle extends p.PrismStyle<TextStyle> {
     TextStyle? tag,
     TextStyle? url,
   }) : super(
-          root: const TextStyle(
-            color: Color(0xff06157D),
-            height: 1.5,
-            fontSize: 16,
-            fontFamily: 'monospace',
-          ).merge(root),
           token: const TextStyle(color: Color(0xff90a4ae)).merge(token),
           atrule: const TextStyle(color: Color(0xff0000fa)).merge(atrule),
           attrName: const TextStyle(color: Color(0xff39adb5)).merge(attrName),

@@ -35,11 +35,9 @@ void main() {
     const language = 'dart';
 
     final prism = Prism(
-      style: PrismStyle(
-        root: const TextStyle(fontSize: 18),
-      ),
+      style: PrismStyle(),
     );
-    final textSpan = prism.render(code, language);
+    final textSpans = prism.render(code, language);
 
     return Scaffold(
       appBar: AppBar(
@@ -48,7 +46,15 @@ void main() {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: RichText(
-          text: textSpan,
+          text: TextSpan(
+            style: const TextStyle(
+              color: Color(0xff06157D),
+              height: 1.5,
+              fontSize: 18,
+              fontFamily: 'monospace',
+            ),
+            children: textSpans,
+          ),
         ),
       ),
     );
