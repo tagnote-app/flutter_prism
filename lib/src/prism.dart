@@ -1,15 +1,19 @@
 import 'package:dart_prism/dart_prism.dart' as p;
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 
 import 'style.dart';
 
 /// Creates a [Prism].
 class Prism {
   Prism({
+    MouseCursor? mouseCursor,
     p.PrismStyle style = const PrismStyle(),
-  }) : _styles = style;
+  })  : _styles = style,
+        _mouseCursor = mouseCursor;
 
   final p.PrismStyle _styles;
+  final MouseCursor? _mouseCursor;
 
   /// Renders [code] to a [TextSpan] list with the grammar of the given
   /// [language].
@@ -34,31 +38,34 @@ class Prism {
 
   /// Parses the given [node] into a [TextSpan].
   TextSpan _parseNode(p.Node node) {
+    String? text;
+    List<TextSpan>? children;
+    TextStyle? style;
+
     if (node is p.Text) {
-      return TextSpan(text: node.text);
+      text = node.text;
+    } else {
+      style = _styles.get('token') ?? const TextStyle();
+      style = style!.merge(_styles.get(node.type));
+
+      for (final alias in node.aliases) {
+        style = style!.merge(_styles.get(alias));
+      }
+
+      if (node is p.Token) {
+        text = node.text;
+      } else if (node is p.Container) {
+        children = _parseNodes(node.children);
+      } else {
+        throw ArgumentError('Unknown node type');
+      }
     }
 
-    var style = _styles.get('token') ?? const TextStyle();
-    style = style.merge(_styles.get(node.type));
-
-    for (final alias in node.aliases) {
-      style = style.merge(_styles.get(alias));
-    }
-
-    if (node is p.Token) {
-      return TextSpan(
-        style: style,
-        text: node.text,
-      );
-    }
-
-    if (node is p.Container) {
-      return TextSpan(
-        style: style,
-        children: _parseNodes(node.children),
-      );
-    }
-
-    throw ArgumentError('Unknown node type');
+    return TextSpan(
+      text: text,
+      children: children,
+      style: style,
+      mouseCursor: _mouseCursor,
+    );
   }
 }

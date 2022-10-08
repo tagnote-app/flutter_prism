@@ -2,8 +2,9 @@
 
 - Update to _dart_prism_ 0.2.1.
 - Change `PrismStyle` to constant constructor.
-- New public method for `PrismStyle`: `mergeWith(...)`.
+- New public method `mergeWith(...)` for `PrismStyle` class.
 - Set default style for `Prism`.
+- Add a new option `mouseCursor` for `Prism` class.
 
 ## 0.2.0
 
