@@ -37,12 +37,8 @@ void main() {
     print(message);
 }
 ''';
-    const language = 'dart';
-
-    final prism = Prism(
-      style: PrismStyle(),
-    );
-    final textSpans = prism.render(code, language);
+    final prism = Prism();
+    final textSpans = prism.render(code, 'dart');
 
     return Scaffold(
       appBar: AppBar(

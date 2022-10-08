@@ -1,6 +1,13 @@
+## 0.2.1-dev
+
+- Update to _dart_prism_ 0.2.1.
+- Change `PrismStyle` to constant constructor.
+- New public method for `PrismStyle`: `mergeWith(...)`.
+- Set default style for `Prism`.
+
 ## 0.2.0
 
-- Update to `dart_prism` 0.2.0.
+- Update to _dart_prism_ 0.2.0.
 - **Breaking change**: Remove `root` from `PrismStyle`.
 - **Breaking change**: Change return type of `Prism.render` from `TextSpan` to
   List<TextSpan>.

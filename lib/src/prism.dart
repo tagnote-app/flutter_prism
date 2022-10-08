@@ -3,12 +3,13 @@ import 'package:flutter/painting.dart';
 
 import 'style.dart';
 
+/// Creates a [Prism].
 class Prism {
   Prism({
-    required PrismStyle style,
+    p.PrismStyle style = const PrismStyle(),
   }) : _styles = style;
 
-  final PrismStyle _styles;
+  final p.PrismStyle _styles;
 
   /// Renders [code] to a [TextSpan] list with the grammar of the given
   /// [language].
@@ -20,6 +21,7 @@ class Prism {
     );
   }
 
+  /// Parses [nodes] into a series of [TextSpan].
   List<TextSpan> _parseNodes(List<p.Node> nodes) {
     final textSpans = <TextSpan>[];
 
@@ -30,6 +32,7 @@ class Prism {
     return textSpans;
   }
 
+  /// Parses the given [node] into a [TextSpan].
   TextSpan _parseNode(p.Node node) {
     if (node is p.Text) {
       return TextSpan(text: node.text);
