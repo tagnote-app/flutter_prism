@@ -1,4 +1,4 @@
-## 0.2.1-dev
+## 0.2.1
 
 - Update to _dart_prism_ 0.2.1.
 - Change `PrismStyle` to constant constructor.
