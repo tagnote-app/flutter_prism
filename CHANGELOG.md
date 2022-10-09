@@ -1,3 +1,7 @@
+## 0.2.2-dev
+
+- Export `NoGrammarFoundError` from `dart_prism`.
+
 ## 0.2.1
 
 - Update to _dart_prism_ 0.2.1.
