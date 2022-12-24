@@ -43,6 +43,46 @@ class PrismStyle extends p.PrismStyle<TextStyle> {
     super.url = const TextStyle(color: Color(0xffe53935)),
   });
 
+  const PrismStyle.dark({
+    super.token = const TextStyle(color: Color(0xff90a4ae)),
+    super.atrule = const TextStyle(color: Color(0Xff8686f8)),
+    super.attrName = const TextStyle(color: Color(0xff39adb5)),
+    super.attrValue = const TextStyle(color: Color(0xfff6a434)),
+    super.bold = const TextStyle(fontWeight: FontWeight.bold),
+    super.boolean = const TextStyle(color: Color(0Xff8686f8)),
+    super.builtin = const TextStyle(color: Color(0xff39adb5)),
+    super.cdata = const TextStyle(color: Color(0xff39adb5)),
+    super.char = const TextStyle(color: Color(0xff39adb5)),
+    super.className = const TextStyle(color: Color(0xFF25DFC9)),
+    super.comment = const TextStyle(color: Color(0xff989898)),
+    super.constant = const TextStyle(color: Color(0Xff8686f8)),
+    super.deleted = const TextStyle(color: Color(0xffe53935)),
+    super.doctype = const TextStyle(color: Color(0xff989898)),
+    super.entity = const TextStyle(color: Color(0xffe53935)),
+    super.function = const TextStyle(color: Color(0xfff6a434)),
+    super.important = const TextStyle(
+      color: Color(0Xff8686f8),
+      fontWeight: FontWeight.bold,
+    ),
+    super.inserted = const TextStyle(color: Color(0xff39adb5)),
+    super.italic = const TextStyle(fontStyle: FontStyle.italic),
+    super.keyword = const TextStyle(color: Color(0Xff8686f8)),
+    super.namespace = const TextStyle(color: Color(0xFF848484)),
+    super.number = const TextStyle(color: Color(0xff4C855B)),
+    super.operator = const TextStyle(color: Color(0xff39adb5)),
+    super.prolog = const TextStyle(color: Color(0xff989898)),
+    super.property = const TextStyle(color: Color(0xff39adb5)),
+    super.punctuation = const TextStyle(
+      color: Color(0xff39adb5),
+    ),
+    super.regex = const TextStyle(color: Color(0xFF25DFC9)),
+    super.selector = const TextStyle(color: Color(0xffe53935)),
+    super.string = const TextStyle(color: Color(0xFFD93333)),
+    super.symbol = const TextStyle(color: Color(0Xff8686f8)),
+    super.tag = const TextStyle(color: Color(0xffe53935)),
+    super.url = const TextStyle(color: Color(0xffe53935)),
+  });
+
   /// Returns a new style that is a combination of this style and the given
   /// styles.
   PrismStyle mergeWith({
