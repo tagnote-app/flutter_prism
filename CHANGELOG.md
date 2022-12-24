@@ -1,4 +1,4 @@
-## 0.2.2-dev
+## 0.2.2
 
 - Export `NoGrammarFoundError` from `dart_prism`.
 - Add dark style `PrismStyle.dark`.
