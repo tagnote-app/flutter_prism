@@ -12,9 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       home: const MyHomePage(),
     );
   }
@@ -32,7 +31,10 @@ void main() {
     print(message);
 }
 ''';
-    final prism = Prism();
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    final prism = Prism(
+      style: !isDarkMode ? const PrismStyle() : const PrismStyle.dark(),
+    );
     final textSpans = prism.render(code, 'dart');
 
     return Scaffold(
@@ -43,8 +45,10 @@ void main() {
         padding: const EdgeInsets.all(20),
         child: RichText(
           text: TextSpan(
-            style: const TextStyle(
-              color: Color(0xff06157D),
+            style: TextStyle(
+              color: isDarkMode
+                  ? const Color(0xFF2575EE)
+                  : const Color(0xff06157D),
               height: 1.5,
               fontSize: 18,
               fontFamily: 'monospace',
